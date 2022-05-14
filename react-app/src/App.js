@@ -1,15 +1,24 @@
 import React from 'react';
 
-import { Wrapper } from './app-style';
 import Content from './Components/Content/Content';
 
+import { Wrapper } from './App-style';
+
 function App() {
+  const content = [
+    "He's not the sharpest knife in the drawer.",
+    "The big building was blazing with lights.",
+    "Now you must answer some big questions.",
+    "Get your act together.",
+  ];
+
   return (
     <Wrapper>
-      <Content content="He's not the sharpest knife in the drawer." />
-      <Content content="The big building was blazing with lights." />
-      <Content content="Now you must answer some big questions." />
-      <Content content="Get your act together." />
+      {
+        content.map((title, index) => (
+          <Content content={title} key={index} />
+        ))
+      }
     </Wrapper>
   );
 }
